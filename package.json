@@ -6,10 +6,10 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Guluki-AI/character-styling-room.git"
+    "url": "https://github.com/Guluski-AI/character-styling-room.git"
   },
   "bugs": {
-    "url": "https://github.com/Guluki-AI/character-styling-room/issues"
+    "url": "https://github.com/Guluski-AI/character-styling-room/issues"
   },
   "main": "desktop/main.mjs",
   "engines": {
