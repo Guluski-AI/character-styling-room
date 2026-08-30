@@ -2,6 +2,12 @@
 
 本地优先的数字角色穿搭方案与 AI 提示词生成工具。它可以读取本机已经分类的衣柜参考图，结合角色图片生成多套穿搭方向，并保存方案和提示词，方便后续继续使用。
 
+## 下载安装包
+
+macOS Apple Silicon 用户请前往 [v0.1.5 Release](https://github.com/Guluski-AI/character-styling-room/releases/tag/v0.1.5) 下载 `.zip` 安装包。
+
+> `Code → Download ZIP` 下载的是源代码，不是安装包。
+
 ## 功能
 
 - 本地文件夹衣柜：按文件夹分类读取穿搭参考图，不移动或删除原图
