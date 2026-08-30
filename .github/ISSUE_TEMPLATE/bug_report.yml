@@ -1,0 +1,35 @@
+name: Bug report
+description: 报告一个可以复现的问题
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请不要上传角色图片、衣柜原图、生成结果、访问令牌或个人文件路径。
+  - type: input
+    id: version
+    attributes:
+      label: 版本或 commit
+      placeholder: 例如 0.1.5 或 abc1234
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请按顺序描述如何触发问题。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+    validations:
+      required: true

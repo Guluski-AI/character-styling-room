@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["outfits"],
+  "properties": {
+    "outfits": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "direction",
+          "title",
+          "summary",
+          "tags",
+          "top",
+          "bottom",
+          "shoes",
+          "accessory",
+          "hair",
+          "tone",
+          "fit",
+          "swatches",
+          "imagePrompt",
+          "consistency"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "direction": { "type": "string" },
+          "title": { "type": "string" },
+          "summary": { "type": "string" },
+          "tags": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 5,
+            "items": { "type": "string" }
+          },
+          "top": { "type": "string" },
+          "bottom": { "type": "string" },
+          "shoes": { "type": "string" },
+          "accessory": { "type": "string" },
+          "hair": { "type": "string" },
+          "tone": { "type": "string" },
+          "fit": { "type": "string" },
+          "swatches": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            }
+          },
+          "imagePrompt": { "type": "string" },
+          "consistency": { "type": "string" }
+        }
+      }
+    }
+  }
+}

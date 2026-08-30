@@ -1,0 +1,95 @@
+{
+  "name": "character-styling-room",
+  "productName": "角色造型室",
+  "description": "本地优先的数字角色穿搭方案与 AI 提示词生成工具",
+  "version": "0.1.5",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Guluki-AI/character-styling-room.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Guluki-AI/character-styling-room/issues"
+  },
+  "main": "desktop/main.mjs",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "test": "npm run test:local && npm run build",
+    "test:local": "node --test local-core/tests/*.test.mjs",
+    "local:health": "node local-core/scripts/health-check.mjs",
+    "local:server": "node local-core/scripts/server.mjs",
+    "desktop:dev": "npm run build && electron .",
+    "desktop:pack": "npm run build && electron-builder --mac dir",
+    "desktop:zip": "npm run build && electron-builder --mac zip",
+    "desktop:dmg": "npm run build && electron-builder --mac dmg"
+  },
+  "dependencies": {
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-server-dom-webpack": "19.2.8",
+    "vinext": "0.0.50"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "electron": "43.2.0",
+    "electron-builder": "26.15.3",
+    "typescript": "5.9.3",
+    "vite": "8.2.0",
+    "wrangler": "4.92.0"
+  },
+  "type": "module",
+  "overrides": {
+    "fast-uri": "3.1.4",
+    "postcss": "8.5.25",
+    "sharp": "0.35.3"
+  },
+  "build": {
+    "appId": "cn.onesmile.characterstylingroom",
+    "productName": "角色造型室",
+    "asar": true,
+    "npmRebuild": false,
+    "electronDist": "node_modules/electron/dist",
+    "afterPack": "desktop/after-pack.cjs",
+    "directories": {
+      "output": "desktop-dist"
+    },
+    "files": [
+      "desktop/**/*",
+      "dist/**/*",
+      "local-core/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "local-core/schemas",
+        "to": "local-core/schemas",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.graphics-design",
+      "icon": "icon.icns",
+      "target": [
+        "dmg"
+      ],
+      "identity": null
+    },
+    "dmg": {
+      "title": "角色造型室 ${version}"
+    },
+    "artifactName": "Character-Styling-Room-${version}-${arch}.${ext}"
+  }
+}
